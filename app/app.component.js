@@ -9,15 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var hero_model_1 = require('./hero.model');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(heroService) {
+        this.heroService = heroService;
+        this.heros = [];
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.heroService.getHeroes()
+            .then(function (heros) {
+            _this.heros = heros;
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h2>My second Angular app</h2>'
+            template: "\n    <h2>My Heros</h2>\n    <ul class=\"heroes\">\n        <li>\n\n        </li>\n    </ul>\n    "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [hero_model_1.HeroService])
     ], AppComponent);
     return AppComponent;
 }());

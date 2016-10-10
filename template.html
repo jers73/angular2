@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <title>Title</title>
+</head>
+<body>
+    <div class="page">
+        <div class="page-topbar">
+            <div class="logo-area">Logo</div>
+            <ul class="info-menu pull-left">
+                <li class="sidebar-toggle-wrap">
+                    <a href class="sidebar-toggle">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="page-sidebar">
+            side
+        </div>
+        <div class="page-content">
+
+        </div>
+        <div class="page-footer">
+            top bar
+        </div>
+    </div>
+
+    <template>
+        <p>Hola mundo</p>
+    </template>
+    <script>
+        var template = document.querySelector('template'),
+            clone = document.importNode(template.content, true);
+
+        document.querySelector('.page-content').appendChild(clone);
+
+
+    </script>
+</body>
+</html>

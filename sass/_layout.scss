@@ -1,0 +1,82 @@
+
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.page {
+    padding-top: $header-height;
+    min-height: 100%;
+    position: relative;
+}
+
+.page-content {
+    padding-bottom: $footer-height;
+}
+
+.page-footer {
+    height: $footer-height;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+}
+
+
+.page-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    width: 100%;
+    max-height: $header-height;
+    min-height: $header-height;
+    background-color: #37474f;
+    box-shadow: 0 1px 3px rgba(0,0,0,0), 0 2px 2px rgba(0,0,0,0.1);
+    .logo-area {
+        width: 200px;
+        height: $header-height;
+        float: left;
+        background-color: $primary-color;
+    }
+    .info-menu {
+        list-style: none;
+        background-color: $primary-color;
+        line-height: $header-height;
+        height: $header-height;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        li {
+            padding: 0px 15px;
+        }
+        .sidebar-toggle {
+            color: $gray-lightest;
+            font-size: 20px;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .page-topbar {
+        min-width: 610px;
+    }
+}
+
+.page-sidebar {
+    width: $nav-width;
+    height: calc(100% - #{$header-height});
+    position: fixed;
+    overflow: hidden;
+    background-color: #37474f;
+    display: block;
+    top: $header-height;
+    box-shadow: 0 1px 3px rgba(0,0,0,0),3px 2px 2px rgba(0,0,0,0.1);
+}
+
+.page-content{
+    padding-left: $nav-width;
+    height: 100%;
+}

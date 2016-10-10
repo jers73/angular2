@@ -40,3 +40,8 @@ jspm_packages
 
 /typings/
 /.idea/
+/app/**/*.map
+/app/**/*.js
+/style/
+
+/js/
